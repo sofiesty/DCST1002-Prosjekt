@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="no">
+<head> 
+  <title> Opera Huset </title>
+  <!-- utf-8 gjør at vi kan bruke æ, ø og å -->
+  <meta charset="utf-8">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;  
+}
+
+a {
+  text-decoration: none;
+}
+
+li{
+  list-style: none;
+}
+
+#heather{
+  display: flex;
+  align-items: center;  
+  justify-content: space-between;
+  padding: 10px;
+  background-color: white;
+  border-bottom: 2px solid #322D29;
+  position: sticky;
+  top: 0px;
+}
+
+
+#lenker{
+ display: flex;
+ gap: 1em;
+ font-size: 15px;
+ color: aliceblue;
+}
+
+
+#lenker li{
+  padding: 5px 14px;
+  
+}
+
+#lenker >li >a{
+  color: rgb(0, 0, 0);
+  font-family: monospace; 
+  font-size: 15px;
+  
+}
+
+#lenker >li >a:hover{
+  text-decoration: underline;
+}
+
+#InfoOmOss{
+  display: none;
+  position: absolute;
+  box-shadow: 0px 8px 8px 0px rgb(0, 0, 0);
+  background-color: white;
+}
+
+.imfoOmOss a{
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.imfoOmOss a:hover{
+  text-decoration: underline;
+}
+
+#omOss{
+  width: 50%;
+  text-align: center;
+  position: relative;
+  left: 310px;
+}
+
+.KnapOmOss{
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  font-size: 15px;
+  font-family: monospace;
+}
+
+.KnapOmOss:hover{
+  text-decoration: underline;
+}
+
+
+#hoved{
+  width: 80%;                /* bredde: 60 % av vinduet */
+  margin: 40px auto;
+  padding: 10px;        /* 100 px over elementet, auto midtstiller det */
+  display: grid;
+  background-color: white;
+}
+
+h2{
+  padding-bottom: 20px;
+}
+
+#fakta > li{
+  list-style: disc;
+  font-size: 120%;
+  line-height: 30px;
+}
+
+#bilde{
+  position: relative;
+  height: 500px;
+  margin: inherit;
+}
+
+#bilde1{
+  position: absolute;
+  bottom: 160px;
+  right: 70px;
+}
+#bilde2{
+  position:absolute;
+  top: 50%;
+  left: 40%;
+}
+
+p{
+  font-size: 120%;
+  line-height: 30px;
+}
+</style>
+
+</head>
+<body>
+  
+  <div id="heather">
+    <img src="Bilder/OperaHuset.png" alt="" height="50px">
+    <div id="lenker">
+      <li><a href="Billeter.html">Billeter</a></li>
+      <li>
+        <div id="OmOss">
+        <button id="knap" class="KnapOmOss">Om Oss</button>
+        <div id="InfoOmOss" class="imfoOmOss">
+          <a href="OperaHuset.html">Om Operahuset</a>
+          <a href="NorskeOperaOgBallet.html">Om den Norske Opera & Ballet</a>
+        </div>
+      </div>
+      </li>
+      <li><a href="Hjemmeside.html">Hjem</a></li>
+    </div>
+  </div>
+
+  <div id="hoved">
+    <div id="intro"> 
+      <h2>Operahuset</h2>
+
+      <p>Norges første operahus har blitt folkeeie. Operaen i Oslo har befestet seg som en arkitektonisk og kunstnerisk suksess som overstrømmes av besøkende både på innsiden og utsiden. Det er det første operahuset i verden der man kan gå på taket, og har blitt en av Norges store turistattraksjoner.</p>
+    </div>
+
+    <div id="bilde">
+      <div id="bilde1">
+        <img src="BilderForOmOss/Operaen, Den norske opera & ballett.jpg" alt="" height="350px">
+      </div>
+      <div id="bilde2">
+        <img src="BilderForOmOss/OperaHusetOmoss.png" alt="" height="250px">
+      </div>
+    </div>
+    
+
+    <div id="fakta">  
+        <li>Kostet 4,3 milliarder norske kroner og tok fem år å bygge</li>
+        <li>Første spadetak 17. februar 2003</li>
+        <li>Åpnet med en gallaforestilling 12. april 2008</li>
+        <li>Bruttoareal: 49 000 m2 fordelt på cirka 1100 rom</li>
+        <li>Har tre saler for opera, ballett og konserter</li>
+        <li>Huser Den Norske Opera & Ballett som ble stiftet i 1957</li>
+        <li>Den Norske Opera & Ballett er Norges største musikk- og scenekunstinstitusjon</li>
+        <li>Organisasjonen har over 600 ansatte fordelt på omtrent 50 yrkesgrupper</li>
+      <br>
+      <p>Operahuset er belønnet med en lang rekke priser og stor internasjonal oppmerksomhet. Norsk og internasjonal presse har dokumentert Operaen i et mangfold av medier, og organisasjoner, næringsliv og samfunnet for øvrig viser stor interesse. Her tilbys forestillinger og konserter fra det klassiske til det moderne, og tilstrømmingen av publikum viser at opera og ballett aldri har vært mer populært i Norge enn nå.  
+      </p>
+    </div>
+
+  </div>
+
+  <script>
+    //Drop down menu for om oss knap
+    let OmOssKnapEl = document.querySelector("#knap");
+    let InfoOmOssMenu = document.querySelector("#InfoOmOss");
+
+      OmOssKnapEl.addEventListener("click", function(){
+        InfoOmOssMenu.style.display = InfoOmOssMenu.style.display === 'block' ? 'none': 'block';
+      });
+  </script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="no">
+<head> 
+  <title> Butikk </title>
+  <!-- utf-8 gjør at vi kan bruke æ, ø og å -->
+  <meta charset="utf-8">
+
+<style>
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;  
+}
+  a {
+    text-decoration: none;
+  }
+  li{
+  list-style: none;
+}
+
+#heather{
+  display: flex;
+  align-items: center;  
+  justify-content: space-between;
+  padding: 10px;
+  background-color: white;
+  border-bottom: 2px solid #322D29;
+  position: sticky;
+  top: 0px;
+}
+
+#lenker{
+ display: flex;
+ gap: 1em;
+ font-size: 15px;
+ color: aliceblue;
+}
+
+#lenker li{
+  padding: 5px 14px;
+  
+}
+
+#lenker >li >a{
+  color: rgb(0, 0, 0);
+  font-family: monospace; 
+  font-size: 15px;
+  
+}
+
+#lenker >li >a:hover{
+  text-decoration: underline;
+}
+
+#InfoOmOss{
+  display: none;
+  position: absolute;
+  box-shadow: 0px 8px 8px 0px rgb(0, 0, 0);
+  background-color: white;
+}
+
+.imfoOmOss a{
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.imfoOmOss a:hover{
+  text-decoration: underline;
+}
+
+#omOss{
+  width: 50%;
+  text-align: center;
+  position: relative;
+  left: 310px;
+}
+
+.KnapOmOss{
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  font-size: 15px;
+  font-family: monospace;
+}
+
+.KnapOmOss:hover{
+  text-decoration: underline;
+}
+
+
+  #hoved{
+    width: 75%;                
+    margin: 40px auto;
+    padding: 10px;         
+  }
+
+  #info >p{
+    font-size: 120%;
+    line-height: 30px;
+  }
+
+
+
+  #flex{
+    display: flex;
+  }
+
+  #flex >p{
+    font-size: 120%;
+    line-height: 30px;
+  }
+
+  #Tilbud{
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    top: 50px;
+  }
+
+  #KnappGruppe1 >button{
+    background-color: #383839;
+    width: 200px;
+    margin-bottom: 35px;
+    padding-left: 30px;
+    padding-right: 30px;
+    cursor: pointer;
+    display: block;
+    height: 40px;
+    width: 100%;
+    color: white;
+  }
+  #KnappGruppe2 >button{
+    background-color: #e13341;
+    width: 200px;
+    margin-bottom: 35px;
+    padding-left: 50px;
+    padding-right: 50px;
+    cursor: pointer;
+    display: block;
+    height: 40px;
+    width: 100%;
+    color: white;
+  }
+  #KnappGruppe3 >button{
+    background-color: #383839;
+    width: 200px;
+    margin-bottom: 35px;
+    cursor: pointer;
+    display: block;
+    height: 40px;
+    width: 100%;
+    color: white;
+  }
+
+
+</style>
+
+</head>
+<body>
+  
+  <div id="heather">
+    <img src="Bilder/OperaHuset.png" alt="" height="50px">
+    <div id="lenker">
+      <li><a href="Billeter.html">Billeter</a></li>
+      <li>
+        <div id="OmOss">
+        <button id="knap" class="KnapOmOss">Om Oss</button>
+        <div id="InfoOmOss" class="imfoOmOss">
+          <a href="OperaHuset.html">Om Operahuset</a>
+          <a href="NorskeOperaOgBallet.html">Om den Norske Opera & Ballet</a>
+        </div>
+      </div>
+      </li>
+      <li><a href="Hjemmeside.html">Hjem</a></li>
+    </div>
+  </div>
+
+  <div id="hoved">
+    <div id="info">
+      <h2>Om den Norske Opera & Ballet</h2>
+      <br>
+      <p class="førsteAvsnitt">
+        Den Norske Opera & Ballett er landets største musikk- og scenekunstinstitusjon, og skal presentere opera, ballett og konserter av høyeste kunstnerisk kvalitet. DNO&B består av kompaniene Nasjonalballetten, Nasjonalballetten UNG og Nasjonaloperaen, foruten Operaorkestret, Operakoret, Barnekoret og Ballettskolen.
+      </p>
+      <br>
+      <div id="flex">
+        <p class="andreAvsnitt">
+          Den Norske Opera hadde sin første forestilling på Folketeatret i 1958, med Kirsten Flagstad som operasjef. I 2008 ble det nye operahuset i Bjørvika åpnet, og vi skiftet navn til Den Norske Opera & Ballett. Dette var en følge av at opera og ballett nå ble sidestilte kunstarter hos oss.
+
+          Operahuset i Bjørvika er hovedarenaen for kunsten vår, men vi opptrer også andre steder, både nasjonalt og internasjonalt. Vi er ca. 600 faste ansatte, fordelt på nærmere 40 yrkesgrupper og nasjonaliteter.
+        </p>
+        <img src="./BilderForOmOss/GammelOpera.png" alt="" height="300px">
+      </div>
+    </div>
+
+    <div id="Tilbud">
+      <div id="KnappGruppe1">
+        <button>Nasjonaloperan</button>
+        <button>Nasjonalballetten</button>
+        <button>Nasjonalballetten Ung</button>
+      </div>
+      <div id="KnappGruppe2">
+        <button>Operakoret</button>
+        <button>Operaorkestret</button>
+        <button>Barnekoret</button>
+      </div>
+      <div id="KnappGruppe3">
+        <button>Ballettskolen</button>
+        <button>Styret og ledelse</button>
+        <button>Årsraporter og styringsdokumenter</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    //Drop down menu for om oss knap
+let OmOssKnapEl = document.querySelector("#knap");
+let InfoOmOssMenu = document.querySelector("#InfoOmOss");
+
+  OmOssKnapEl.addEventListener("click", function(){
+    InfoOmOssMenu.style.display = InfoOmOssMenu.style.display === 'block' ? 'none': 'block';
+  });
+  </script>
+</body>
+</html>
