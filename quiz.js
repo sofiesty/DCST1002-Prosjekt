@@ -76,18 +76,8 @@ const resultsContainer = document.getElementById('results');
 const submitButton = document.getElementById('submit');
 // find selected answer
 const answerContainer = answerContainers[questionNumber];
-const selector = input[name=question${questionNumber}]:checked;
+const selector = 'input[name=question${questionNumber}],:checked';
 const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-const myQuestions = [ ... ];
-
-// Kick things off
-buildQuiz();
-
-// Event listeners
-submitButton.addEventListener('click', showResults);
-
-
-
 const myQuestions = [
     {
       question: "Who invented JavaScript?",
@@ -118,3 +108,11 @@ const myQuestions = [
         correctAnswer: "d"
       }
     ];
+
+// Kick things off
+buildQuiz();
+
+// Event listeners
+submitButton.addEventListener('click', showResults);
+
+
