@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="no">
 <head> 
-  <title> Butikk </title>
+  <title> Menneskelige feil </title>
   <!-- utf-8 gjør at vi kan bruke æ, ø og å -->
   <meta charset="utf-8">
 
@@ -10,212 +10,30 @@
 </head>
 <body>
   
-  <div id="heather">
-    <a href="Hjemmeside.html">
+  <div id="header">
+    <a href="index.html">
       <img src="Bilder/OperaHuset.png" alt="" height="50px">
     </a>
-    <div id="lenker">
-      <li><a href="Billeter.html">Billeter</a></li>
+    <div id="undersider">
       <li>
-        <div id="OmOss">
-        <button id="knap" class="KnapOmOss">Om Oss</button>
-        <div id="InfoOmOss" class="imfoOmOss">
-          <a href="OperaHuset.html">Om Operahuset</a>
-          <a href="NorskeOperaOgBallet.html">Om den Norske Opera & Ballet</a>
-        </div>
-      </div>
+        <a href="Underside.html">Menneskelige Feil</a>
       </li>
-      <li><a href="Hjemmeside.html">Hjem</a></li>
+      <li>
+        <a href="Underside2.html">Passordhåndtering</a>
+      </li>
+      <li>
+        <a href="Underside3.html">Phising</a>
+      </li>
     </div>
   </div>
 
-    <div id="kalender">
-      <button value="31">Januar</button>
-      <button value="28">Februar</button>
-      <button value="31">Mars</button>
-      <button value="30">April</button>
-      <button value="31">Mai</button>
-      <button value="30">Juni</button>
-      <button value="31">Juli</button>
-      <button value="31">August</button>
-      <button value="30">September</button>
-      <button value="31">Oktober</button>
-      <button value="30">November</button>
-      <button value="31">Desember</button>
-    </div>
-  <div id="flex">
-    <div id="datoer">
-      <div id="forslag1" class="forslag"></div>
-      <div id="forslag2" class="forslag"></div>
-      <div id="forslag3" class="forslag"></div>
-      <div id="forslag4" class="forslag"></div>
-    </div>
-
-    <div id="BilletKjøp" style="display: none;" >
-      <h2>Billeter til deg!</h2>
-
-      <label for="voksen">Voksen (600 kr)</label> 
-      <input type="number" id="voksen" min="0" >
-
-      <label for="under30">Student / Under 30 (400 kr)</label>
-      <input type="number" id="under30" min="0">
-
-      <label for="barn">Barn 0-16 (250 kr)</label>
-      <input type="number" id="barn" min="0">
-
-      <label for="senior">Honnør/Senior (250 kr)</label>
-      <input type="number" id="senior" min="0">
-
-      <button id="BerengPris">Kjøp billetter</button>
-
-      <div id="totalPris">
-
-      </div>
-
+  <div>
+    <div>
+      <h1>
+        Menneskelige Feil
+      </h1>
     </div>
   </div>
-  
-
-
-  <script>
-
-    //Drop down menu for om oss knap
-    let OmOssKnapEl = document.querySelector("#knap");
-    let InfoOmOssMenu = document.querySelector("#InfoOmOss");
-
-      OmOssKnapEl.addEventListener("click", function(){
-        InfoOmOssMenu.style.display = InfoOmOssMenu.style.display === 'block' ? 'none': 'block';
-      });
-
-    let knapperEls = document.querySelectorAll('#kalender > button');
-    
-    let forslag1El = document.querySelector("#forslag1");
-    let forslag2El = document.querySelector("#forslag2");
-    let forslag3El = document.querySelector("#forslag3");
-    let forslag4El = document.querySelector("#forslag4");
-
-    
-
-    let antallDatoer = 0 
-
-    let datoForestillinger = []
-    let valgDato = []
-    
-    let forestillinger = ["Tornerose", "Maskeballet", "Costello & Nieve in concert","Balletskolens Elev-Forestilling", "Oslo Jazz Festival - Jan Garbarek", "Jo Strømgren Kompani - Made In Oslo"]
-    let ledigeForestillinger = []
-    
-    let klokkeslet = ["16:00", "17:30", "17:00", "18:30", "20:30", "21:00", "18:00", "14:00", "12:30", "15:00"]
-    let valgKlokleslett = []
-
-    let billetkjøpEl = document.querySelector("#BilletKjøp");
-
-    
-    
-
-    knapperEls.forEach(function (e) {
-      e.addEventListener('click', function() {
-          antallDatoer = e.value
-        console.log(antallDatoer)
-        //Pusher value fra knappen til en array 
-        for(i = 0; i<1; i++){
-          for(i = 1; i <Number(e.value)+1; i++){
-            datoForestillinger.push(Number(i))
-          }
-          //Velger 4 ulike datoer for hver måndet 
-            for(i =0; i <4; i++){
-              
-            let RandomDato = Math.floor(Math.random()*datoForestillinger.length);
-              valgDato.push(datoForestillinger[RandomDato]);
-
-              valgDato.sort(function(a, b) {
-                return a - b;
-              });
-              console.log(valgDato)
-    
-              forslag1El.innerHTML = "<p>" + valgDato[0] + " " + e.innerHTML + "</p>"
-              forslag2El.innerHTML = "<p>" + valgDato[1] + " " + e.innerHTML + "</p>"
-              forslag3El.innerHTML = "<p>" + valgDato[2] + " " + e.innerHTML + "</p>"
-              forslag4El.innerHTML = "<p>" + valgDato[3] + " " + e.innerHTML + "</p>"
-
-              //Velger ramdomt forrestilinger og klokkleslett til hver dato 
-              let randomForestillinger = Math.floor(Math.random()*forestillinger.length);
-              let valgtForestilling =(forestillinger[randomForestillinger])
-                ledigeForestillinger.push(valgtForestilling)
-              console.log(ledigeForestillinger)
-
-              let ramdomklokleelset = Math.floor(Math.random()*klokkeslet.length);
-              let valgteklokleslett = (klokkeslet[ramdomklokleelset]);
-                valgKlokleslett.push(valgteklokleslett);
-              console.log(valgKlokleslett)
-
-              forslag1El.innerHTML +="<p class='forestlinger'>" + ledigeForestillinger[0] + " " + valgKlokleslett[0] + "</p>"
-              forslag2El.innerHTML += "<p class='forestlinger'>" + ledigeForestillinger[1] + " " + valgKlokleslett[1] + "</p>"
-              forslag3El.innerHTML += "<p class='forestlinger'>" + ledigeForestillinger[2] + " " + valgKlokleslett[2] + "</p>"
-              forslag4El.innerHTML += "<p class='forestlinger'>" + ledigeForestillinger[3] + " " + valgKlokleslett[3] + "</p>"
-
-            } 
-          valgDato = []
-          ledigeForestillinger = []
-          valgKlokleslett = []
-          
-          //Lager knapp for å klare å kjøpe billeter til den forestilingen 
-          let KjøpKnapEl = document.createElement('button');
-          KjøpKnapEl.id = "kjøpKnap"
-          KjøpKnapEl.innerHTML ="Kjøp Billeter"
-         
-          let forslagknapEl = document.querySelectorAll(".forslag"); 
-            forslagknapEl.forEach(function(kjøpKnapper) {
-              kjøpKnapper.appendChild(KjøpKnapEl.cloneNode(true));
-
-              kjøpKnapper.addEventListener("click", function() {
-                billetkjøpEl.style.display = "block";
-                
-              });   
-          });
-        }
-      });
-    });
-
-    let prisVoksen = 600
-    let prisUnder30 = 400
-    let prisBarnOgHonnør = 250
-    let inputEls = document.querySelectorAll("input")
-    let prisArray = []
-    let totalprisEl = document.querySelector("#totalPris")
- 
-    //Beregner Prisen tli antall billeter man vill kjøpe
-    let KnapKjøp = document.querySelector("#BerengPris");
-    KnapKjøp.addEventListener("click", berengPris);
-
-      function berengPris(){
-        for(let i = 0; i < inputEls.length; i++){
-          prisArray.push( Number(inputEls[i].value));
-          console.log(prisArray)
-          }
-
-        let sumvoksen = prisVoksen*prisArray[0]
-          console.log(sumvoksen)
-        let sumUnder30 = prisUnder30*prisArray[1]
-        let sumBarn = prisBarnOgHonnør*prisArray[2]
-        let sumHonnør = prisBarnOgHonnør*prisArray[3]
-
-        let totalSum = sumvoksen + sumUnder30 + sumBarn + sumHonnør
-        console.log(totalSum)
-
-        totalprisEl.innerHTML = "<p class='forestlinger'>" + "Voksen billeter : " + prisArray[0] + "</p>"
-        totalprisEl.innerHTML += "<p class='forestlinger'>" + "Student/under 30 billeter : " + prisArray[1] + "</p>"
-        totalprisEl.innerHTML += "<p class='forestlinger'>" + "Barn billeter : " + prisArray[2] + "</p>"
-        totalprisEl.innerHTML += "<p class='forestlinger'>" + "Honnør billeter : " + prisArray[3] + "</p>"
-        totalprisEl.innerHTML += "<p class='forestlinger'>" +"Totall pris = " + totalSum + " kr." + "</p>"
-
-        prisArray =[]
-      
-      }
-    
-
-    
-    
-  </script>
  
 </body>
 </html>
