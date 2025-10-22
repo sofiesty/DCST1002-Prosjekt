@@ -1,3 +1,26 @@
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
-.fa-anchor,.fa-coffee {font-size:200px} 
+.fa-anchor,.fa-coffee {font-size:200px}
+
+/* Navbar: mørk blå bakgrunn, hvit tekst */
+.w3-bar {
+    background-color: #1D2D44; /* mørk blå */
+}
+
+/* Alle navbar-knapper */
+.w3-bar .w3-bar-item.w3-button {
+    color: white;              /* hvit tekst normalt */
+    transition: 0.3s;          /* smooth hover-effekt */
+}
+
+.w3-bar .w3-bar-item.w3-button {
+    color: white;
+    transition: 0.3s background-color, 0.3s color;
+}
+
+
+/* Hover: hvit bakgrunn, svart tekst */
+.w3-bar .w3-bar-item.w3-button:hover {
+    background-color: white !important;
+    color: black !important;
+}
