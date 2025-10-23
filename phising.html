@@ -14,13 +14,16 @@
 .grid{
     display: grid;
     grid-template-columns: 320px 320px 320px;
-    padding: 30px;
+    padding: 10px;
     column-gap: 20px;
+    gap: 15px;
 }
 
 .kolone{
     word-break: normal;
-    border: 1px solid black
+    border: 1.5px solid black;
+    padding: 15px; /* ← dette gir luft mellom border og innhold */
+    border-radius: 8px; /* valgfritt – gir rundere hjørner */
     
 }
 
@@ -83,22 +86,28 @@
 
     <div>
       <h1 style="text-align: center;">Typer phishing</h1>
-      <h5 class="w3-padding-32" style="text-align: center;">Målet bak phishing er å lure fra deg din personelige informasjon. Her har du de vangliste metodene:</h5>
-        <div class = "grid">  
-            <h4 class = "kolone">Smishing <br>
+      <h2 class="w3-padding-32" style="text-align: center;">Målet bak phishing er å lure fra deg din personelige informasjon! Her har du de vangliste metodene:</h2>
+        <div class = "grid" style="position: relative; right: 25px;">  
+            <h4 class = "kolone"> <u>Smishing </u> <br>
                 Phishing via SMS. Du mottar en tekstmelding som er ut som at den kommer fra et legitim aktør. Den ber deg om å
                 trykke på lenken eller telefonnumre for å løse et "problem", for derretter å blir oppfordret til å bruke bankID eller legge inn
                 personelige opplysninger.
             </h4>    
-            <h4 class="kolone">Vishing <br>
+            <h4 class="kolone"><u>Vishing </u> <br>
             Phishing via telefonsamtale, også kalt voice phishing. Du for en anrop fra en svindler som utgir seg å være 
             en bankansatt eller lignende for å få deg til å oppgi personelig informasjon gjennom samtalen. 
             </h4>
-            <h4 class="kolone">Phishing via email<h4>
+            <h4 class="kolone"><u>Phishing via email </u><br>
+                Phishing via e-post. E-post fra en falsk avsender som utgir seg fra å være en kjent aktør eller offisiel institusjon
+                E-postene inneholder ofte et lenke du skal klikke på. Du kan også bli bedt om å oppgi personelig informasjon, innloginsdetaljer eller laste ned et vedlegg.<h4>
         </div>
-        <div class = "grid" style="position: relative; left: 100px;">
-            <h4 class="kolone">Hval - phishing</h4>
-            <h4 class="kolone">Spear - phishing</h4>
+        <div class = "grid" style="position: relative; left: 150px;">
+            <h4 class="kolone"><u>Hval - phishing </u><br>
+            Phishing rettet mot "store fisker", dette er som regelt for beslutningstakere i bedrifter. Svindleren kan utgi seg 
+        for å være en kollega, kunde eller forretningsparner for å få tilgang til verdifull bedriftinformasjon</h4>
+            <h4 class="kolone"> <u>Spear - phishing </u><br>
+            Phishing rettet mot spesifikke personer eller bedrifter. I motsetning til "vanlig" phishing er angrepet målrettet
+        mot en enkeltperson, en rolle eller funksjon, på jakt eller veldig spesifikk personelig informasjon. </h4>
         </div>
     </div>
     </div>
