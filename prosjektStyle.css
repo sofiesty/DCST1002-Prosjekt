@@ -9,20 +9,20 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 
 /* Alle navbar-knapper */
 .w3-bar .w3-bar-item.w3-button {
-    color: white !important;           /* hvit tekst normalt */
+    color: #f8f6f0 !important;           /* hvit tekst normalt */
     background-color: transparent !important; /* gjennomsiktig bakgrunn */
     transition: 0.3s background-color, 0.3s color;
 }
 
 /* Hover: hvit bakgrunn, svart tekst */
 .w3-bar .w3-bar-item.w3-button:hover {
-    background-color: white !important;
+    background-color: #f8f6f0 !important;
     color: black !important;
 }
 
 /* Aktiv knapp: hvit bakgrunn, svart tekst */
 .w3-bar .w3-bar-item.w3-button.active {
-    background-color: white !important;
+    background-color: #f8f6f0 !important;
     color: black !important;
 }
 
@@ -37,6 +37,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     left: 700px;
     top: -280px;
 }
+
 @import url(https://fonts.googleapis.com/css?family=Work+Sans:300,600);
 
 body{
@@ -44,14 +45,21 @@ body{
   font-family: 'Work Sans', sans-serif;
   color: #333;
   font-weight: 300;
-  text-align: center;
   background-color: #f8f6f0;
 }
 
-
+.main {
+  text-align: center;
+  font-size: 20px;
+  font-family: 'Work Sans', sans-serif;
+  color: #333;
+  font-weight: 300;
+  background-color: #f8f6f0;
+}
 .question{
   font-size: 30px;
   margin-bottom: 10px;
+  text-align: center;
 }
 .answers {
   margin-bottom: 20px;
@@ -68,7 +76,7 @@ body{
 button{
   font-family: 'Work Sans', sans-serif;
   font-size: 22px;
-  background-color: rgb(22, 69, 87);
+  background-color: #1D2D44;
   color: #fff;
   border: 0px;
   border-radius: 3px;
@@ -78,11 +86,13 @@ button{
 }
 
 button:hover{
-  background-color: #38a;
+  background-color: #2b3d56;
 }
 
 .quiz-container{
-  position: relative;
+  position: fixed;
   height: 200px;
   margin-top: 40px;
+  width: 50%;
+  margin: 0 auto;
 }
