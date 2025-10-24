@@ -11,7 +11,6 @@ function buildQuiz(){
           answers.push(
             `<label>
               <input type="radio" name="question${questionNumber}" value="${letter}">
-              ${letter} :
               ${currentQuestion.answers[letter]}
             </label>`
           );
@@ -49,11 +48,30 @@ function buildQuiz(){
       else{
         
         answerContainers[questionNumber].style.color = 'darkred';
-      }
-    });
+      } 
+      
+      
+    });    
   
+      submitButton.innerHTML = `Prøv på nytt`;
+      submitButton.addEventListener("click",reset);
+
     resultsContainer.innerHTML = `${numCorrect} av ${myQuestions.length} riktige`;
   }
+
+  function reset(){
+    const answerContainers = quizContainer.querySelectorAll('.answers');
+    answerContainers.forEach(container => {
+      container.style.color = 'black';
+    });
+
+    const radios = quizContainer.querySelectorAll('input[type="radio"]');
+    radios.forEach(radio => radio.checked = false);
+
+    resultsContainer.innerHTML = '';
+    submitButton.innerHTML = "Se resultat";
+    submitButton.addEventListener("click",showResults);
+   }
 
 const quizContainer = document.getElementById('quiz');
 const resultsContainer = document.getElementById('results');
@@ -61,37 +79,39 @@ const submitButton = document.getElementById('submit');
 
 const myQuestions = [
     {
-      question: "Who invented JavaScript?",
+      question: "Hva er Phishing?",
       answers: {
-        a: "Douglas Crockford",
-        b: "Sheryl Sandberg",
-        c: "Brendan Eich"
+        a: "En type programvare som krypterer filer",
+        b: "En type svindel der angriperen prøver å få deg til å oppgi personlige opplysninger",
+        c: "En metode for å forberede nettsikkerhet",
+        d: "En lovfestet prosedyre for bankverifisering"
       },
-      correctAnswer: "c"
+      correctAnswer: "b"
     },
     {
-      question: "Which one of these is a JavaScript package manager?",
+      question: "Hvilket av disse er en god indikator på at en e-post kan være phishing?",
       answers: {
-        a: "Node.js",
-        b: "TypeScript",
-        c: "npm"
+        a: "E-posten bruker ditt fulle navn korrekt og spesifikt",
+        b: "E-posten kommer fra en intern bedriftskonto",
+        c: "E-posten inneholder ingen lenker eller vedlegg",
+        d: "E-posten adressen stemmer ikke overens med avsenderens visningsnavn"
       },
-      correctAnswer: "c"
+      correctAnswer: "d"
     },
     {
-        question: "Which tool can you use to ensure code quality?",
+        question: "Hvilket tiltak reduserer risikoen for å bli utsatt for phishing?",
         answers: {
-          a: "Angular",
-          b: "jQuery",
-          c: "RequireJS",
-          d: "ESLint"
+          a: "Bruk tofaktorautentisering og sterke passord",
+          b: "Oppgi PIN-kode når noen ber om det i en e-post ",
+          c: "Bruk samme passord på alle tjenester",
+          d: "Deaktiver oppdateringer for programmer og apper"
         },
-        correctAnswer: "d"
+        correctAnswer: "a"
       }
     ];
 
 buildQuiz();
 
-submitButton.addEventListener('click', showResults);
+submitButton.addEventListener("click", showResults)
 
 
