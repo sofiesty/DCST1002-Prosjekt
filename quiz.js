@@ -1,6 +1,6 @@
 function buildQuiz(){
     const output = [];
-  
+    console.log("buildQuiz")
     myQuestions.forEach(
       (currentQuestion, questionNumber) => {
   
@@ -22,12 +22,13 @@ function buildQuiz(){
         );
       }
     );
-  
+    resultsContainer.innerHTML = " "
+    submitButton.innerHTML = "Se resultat"
     quizContainer.innerHTML = output.join('');
   }
 
   function showResults(){
-
+    console.log("showResults")
     const answerContainers = quizContainer.querySelectorAll('.answers');
   
     let numCorrect = 0;
@@ -50,28 +51,13 @@ function buildQuiz(){
         answerContainers[questionNumber].style.color = 'darkred';
       } 
       
-      
     });    
+    
   
-      submitButton.innerHTML = `Prøv på nytt`;
-      submitButton.addEventListener("click",reset);
-
+    submitButton.innerHTML = `Prøv på nytt`;
     resultsContainer.innerHTML = `${numCorrect} av ${myQuestions.length} riktige`;
   }
 
-  function reset(){
-    const answerContainers = quizContainer.querySelectorAll('.answers');
-    answerContainers.forEach(container => {
-      container.style.color = 'black';
-    });
-
-    const radios = quizContainer.querySelectorAll('input[type="radio"]');
-    radios.forEach(radio => radio.checked = false);
-
-    resultsContainer.innerHTML = '';
-    submitButton.innerHTML = "Se resultat";
-    submitButton.addEventListener("click",showResults);
-   }
 
 const quizContainer = document.getElementById('quiz');
 const resultsContainer = document.getElementById('results');
@@ -109,9 +95,15 @@ const myQuestions = [
         correctAnswer: "a"
       }
     ];
-
+submitButton.addEventListener("click", () => {
+  if (submitButton.innerHTML === "Se resultat") {
+    showResults();
+  } 
+  else {
+        buildQuiz();
+      }
+  });
 buildQuiz();
 
-submitButton.addEventListener("click", showResults)
 
 
