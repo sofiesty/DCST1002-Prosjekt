@@ -93,8 +93,69 @@ const myQuestions = [
           d: "Deaktiver oppdateringer for programmer og apper"
         },
         correctAnswer: "a"
+      },
+      {
+        question: "Hvor mange prosent er menneskelige feil den største årsaken for brudd på nettsikkerhet?",
+        answers: {
+          a: "60%",
+          b: "90%",
+          c: "95%",
+          d: "85%"
+        },
+        correctAnswer: "c"
+      },
+      {
+        question: "Hva er ikke et typisk eksempel på menneskelige feil som kan føre til sikkerhetsbrudd",
+        answers: {
+          a: "Klikke på en ukjent link",
+          b: "Koble til en tilfeldig USB",
+          c: "Sende viktig informasjon til feil person",
+          d: "Innbrudd i bedriften"
+        },
+        correctAnswer: "d"
+      },
+      {
+        question: "Hva er et eksempel på en ondsinnet handling?",
+        answers: {
+          a: "Selge informasjon til andre kunder",
+          b: "Glemme å låse pc'en",
+          c: "Ikke oppdatere systemer over lenger tid",
+          d: "Benytte svake passord"
+        },
+        correctAnswer: "a"
+      },
+      {
+        question: "Hvor bør du lagre passordene dine?",
+        answers: {
+          a: "En lapp på pulten din",
+          b: "Et dokument på pc'en",
+          c: "En passordbehandler",
+          d: "Man bør ikke lagre passordene sine noe sted"
+        },
+        correctAnswer: "c"
+      },
+      {
+        question: "Hvilket av passordene er et unikt passord?",
+        answers: {
+          a: "BeHappy123",
+          b: "H0rsE$hoeCaKe!",
+          c: "123456",
+          d: "lastaa!!"
+        },
+        correctAnswer: "b"
+      },
+      {
+        question: "Hva er et godt tips for sikker passordhåndtering",
+        answers: {
+          a: "Fortell det til en du stoler på",
+          b: "Ikke følg retningslinjene til nettsiden du bruker",
+          c: "Benytt samme passord på alle plattformer",
+          d: "Bruk tofaktorautentisering"
+        },
+        correctAnswer: "d"
       }
     ];
+    
 submitButton.addEventListener("click", () => {
   if (submitButton.innerHTML === "Se resultat") {
     showResults();

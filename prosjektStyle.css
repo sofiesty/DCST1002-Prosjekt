@@ -53,8 +53,9 @@ body{
 .question{
   font-size: 30px;
   margin-bottom: 10px;
-  text-align: left ;
+  text-align: left;
   padding-top: 25px;
+  padding-right: 300px;
   padding-left: 300px;
 }
 
