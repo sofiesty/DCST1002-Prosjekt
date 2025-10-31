@@ -1,6 +1,7 @@
 function buildQuiz(){
     const output = [];
-    console.log("buildQuiz")
+    quizContainer.innerHTML = "";
+
     myQuestions.forEach(
       (currentQuestion, questionNumber) => {
   
@@ -28,7 +29,6 @@ function buildQuiz(){
   }
 
   function showResults(){
-    console.log("showResults")
     const answerContainers = quizContainer.querySelectorAll('.answers');
   
     let numCorrect = 0;
@@ -55,7 +55,13 @@ function buildQuiz(){
     
   
     submitButton.innerHTML = `Prøv på nytt`;
-    resultsContainer.innerHTML = `${numCorrect} av ${myQuestions.length} riktige`;
+    if (numCorrect >= 8) {
+      resultsContainer.innerHTML = `Du fikk ${numCorrect} av ${myQuestions.length} riktige, <br> og er nå NOVA utdannet!`; 
+    }
+    else {
+      resultsContainer.innerHTML = `Du fikk ${numCorrect} av ${myQuestions.length} riktige. <br> Prøv på nytt for å bli 
+      NOVA utdannet`; 
+    }
   }
 
 

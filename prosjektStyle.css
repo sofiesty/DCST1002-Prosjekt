@@ -75,6 +75,11 @@ body{
   padding: 40px;
   margin: 30px;
 }
+#results {
+  display: block;
+  margin-bottom: 30px;
+  align-items: center;
+}
 button{
   font-family: 'Work Sans', sans-serif;
   font-size: 22px;
