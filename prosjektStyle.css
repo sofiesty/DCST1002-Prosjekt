@@ -95,3 +95,7 @@ button{
 button:hover{
   background-color: #2b3d56;
 }
+
+.logo {
+  mix-blend-mode: multiply;  
+}
