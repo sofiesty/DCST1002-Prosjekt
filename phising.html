@@ -10,38 +10,19 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="prosjektStyle.css">
 
-<style>
-.grid{
-    display: grid;
-    grid-template-columns: 320px 320px 320px;
-    padding: 10px;
-    column-gap: 20px;
-    gap: 15px;
-}
-
-.kolone{
-    word-break: normal;
-    border: 1.5px solid black;
-    padding: 15px; /* ← dette gir luft mellom border og innhold */
-    border-radius: 8px; /* valgfritt – gir rundere hjørner */
-    
-}
-
-</style>
-
 </head>
 
 
 <!-- Navbar -->
 <div class="w3-top">
   <div class="w3-bar w3-card w3-left-align w3-large" style="background-color: #1D2D44;">
-    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-large" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="home.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large" style="color: white;">Hjem</a>
-    <a href="menneskelig-feil.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large" style="color: white;">Menneskelige Feil</a>
-    <a href="passord.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large" style="color: white;">Passordhåndtering</a>
-    <a href="phising.html" class="w3-bar-item w3-button w3-padding-large active" style="color: white;">Phishing</a>
-    <a href="quiz.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large" style="color: white;">Quiz</a>
-
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="home.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Hjem</a>
+    <a href="menneskelig-feil.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" style="color: white;">Menneskelige Feil</a>
+    <a href="passord.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" style="color: white;">Passordhåndtering</a>
+    <a href="phising.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large active" style="color: white;">Phishing</a>
+    <a href="kilder.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" style="color: white;">Kilder</a>
+    <a href="quiz.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" style="color: white;">Quiz</a>
   </div>
 
   <!-- Navbar on small screens -->
@@ -66,16 +47,17 @@
       <h2>Hva er phishing?</h2>
       <h5 class="w3-padding-32">Phishing/ nettfiske er en type svindel der bakmennene forsøker å lure brukere til å selv oppgi opplysninger som passord, PIN-Kode eller betalingskortinformasjon. Dette er stort sett basert på sosial manipulasjon.</h5>
 
-      <h5>Tenk deg at du sitter i resepsjonen og får en e-post som ser ut til å komme fra hotellkjeden du jobber fot.
-        Avsenderen ber deg oppdaterte innholdsinformasjonen din for å "fornye sikkerhetstilgangen". Du klikker på lenken, logger in og alt ser normalt ut.
-        Men i virkeligheten har du akkurat gitt fra deg brukernvan og passord til noen som utgir seg for å være hotelkjedden. Kort tid etter kan uvedkommende logge seg inn
-        i systemet og få tilgang til gjesteinformasjon, kreditkortinformasjon og interne dokumenter.
+      <h5>Tenk deg at du sitter i resepsjonen og får en e-post som ser ut til å komme fra hotellkjeden du jobber for.
+         Avsenderen ber deg oppdaterte innholdsinformasjonen din for å "fornye sikkerhetstilgangen".
+        Du klikker på lenken, logger in og alt ser normalt ut. Men i virkeligheten har du akkurat gitt fra deg brukernavn
+        og passord til noen som utgir seg for å være hotellkjeden. Kort tid etter kan uvedkommende logge seg inn i
+        systemet og få tilgang til gjesteinformasjon, kredittkortinformasjon og interne dokumenter.
 
       </h5>
     </div>
 
     <div class="fiske_bilde">
-      <img src="Bilder/fisking.png" alt = "fisking" style="width: 350px; height: 200px; position: relative;right: 320px;">
+      <img src="Bilder/fiskingg.png" alt = "fisking" style="width: 350px; height: 200px;">
     </div>
   </div>
 </div>
@@ -89,34 +71,130 @@
       <h2 class="w3-padding-32" style="text-align: center;">Målet bak phishing er å lure fra deg din personelige informasjon! Her har du de vangliste metodene:</h2>
         <div class = "grid" style="position: relative; right: 25px;">  
             <h4 class = "kolone"> <u>Smishing </u> <br>
-                Phishing via SMS. Du mottar en tekstmelding som er ut som at den kommer fra et legitim aktør. Den ber deg om å
-                trykke på lenken eller telefonnumre for å løse et "problem", for derretter å blir oppfordret til å bruke bankID eller legge inn
-                personelige opplysninger.
+                Phishing via SMS. Du mottar en tekstmelding som er ut som at den kommer fra en legitim aktør.
+                Den ber deg om å trykke på lenken eller telefonnumre for å løse et "problem", 
+                for deretter og blir oppfordret til å bruke bankID eller legge inn personlige opplysninger.
             </h4>    
             <h4 class="kolone"><u>Vishing </u> <br>
-            Phishing via telefonsamtale, også kalt voice phishing. Du for en anrop fra en svindler som utgir seg å være 
-            en bankansatt eller lignende for å få deg til å oppgi personelig informasjon gjennom samtalen. 
+            Phishing via telefonsamtale, også kalt voice phishing. Du for et anrop fra en svindler som utgir seg å
+            være en bankansatt eller lignende for å få deg til å oppgi personlig informasjon gjennom samtalen. 
             </h4>
             <h4 class="kolone"><u>Phishing via email </u><br>
-                Phishing via e-post. E-post fra en falsk avsender som utgir seg fra å være en kjent aktør eller offisiel institusjon
-                E-postene inneholder ofte et lenke du skal klikke på. Du kan også bli bedt om å oppgi personelig informasjon, innloginsdetaljer eller laste ned et vedlegg.<h4>
+                Phishing via e-post. E-post fra en falsk avsender som utgir seg fra å være en kjent aktør
+                eller offisiell institusjon E-postene inneholder ofte en lenke du skal klikke på.
+                Du kan også bli bedt om å oppgi personlig informasjon, innloggingsdetaljer eller laste ned et vedlegg.<h4>
         </div>
         <div class = "grid" style="position: relative; left: 150px;">
             <h4 class="kolone"><u>Hval - phishing </u><br>
-            Phishing rettet mot "store fisker", dette er som regelt for beslutningstakere i bedrifter. Svindleren kan utgi seg 
-        for å være en kollega, kunde eller forretningsparner for å få tilgang til verdifull bedriftinformasjon</h4>
+            Phishing rettet mot "store fisker", dette er som regel for beslutningstakere i bedrifter. 
+            Svindleren kan utgi seg for å være en kollega,
+            kunde eller forretningspartner for å få tilgang til verdifull bedriftsinformasjon.</h4>
             <h4 class="kolone"> <u>Spear - phishing </u><br>
-            Phishing rettet mot spesifikke personer eller bedrifter. I motsetning til "vanlig" phishing er angrepet målrettet
-        mot en enkeltperson, en rolle eller funksjon, på jakt eller veldig spesifikk personelig informasjon. </h4>
+            Phishing rettet mot spesifikke personer eller bedrifter.
+            I motsetning til "vanlig" phishing er angrepet målrettet mot en enkeltperson,
+            en rolle eller funksjon, på jakt eller veldig spesifikk personlig informasjon. </h4>
         </div>
     </div>
     </div>
   </div>
 
+<!-- Tredje Grid -->
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-twothird">
+        <h2>Indikatorer!</h2>
+        <ul>
+            <li>Navnet på avsenderen eller kontaktnavnet er falsk. Vedig enekelt for svindleren å sette hvilken 
+                som helst visning eller avsendernavn.
+            </li>
+            <li>Sjekk om avsenderens mailadresse stemmer med navnet på avsenderen. Vær merksom at de kan se veldige like ut!</li>
+            <li>Se etter generel adressering som "kjære kunde", kan være en indikasjon på at det er en mail som er sendt til mange.</li>
+            <li>Hvis det følger med lenker. Sjekk om linken stemmer overens med den beskrivende teksten. Husk også at verken Politiet
+                eller andre offentlige aktører ikke sender ut linker knyttet til formele prosesser.
+            </li>
+        </ul>
+         <div class="indikator_bilde">
+            <img src="Bilder/indikator.png" alt = "fisking" style="width: 350px; height: 250px;">
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- Fjerde Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-third w3-center">
+      <img src="Bilder/Utilsiktet.jpg" style="width: 350px; height: 200px; top: 50px; position: relative; top: 100px; right: 40px;">
+    </div>
+
+    <div class="w3-twothird">
+      <h1>Unngå å bli rammet!</h1>
+      <ul>
+        <li>Mottar du en slik e-mail som du er usikker er ekte, bør du ikke svare.</li>
+        <li>Uansett ikke oppgi personelig, finansiell eller bedrifts informasjon.</li>
+        <li>Ikke klikk på linker med mindre du er helt sikker på hvem som er avsender.</li>
+        <li>Sjekk avsender adressen for å forsikre deg om at den er ekte.</li>
+        <li>Bruk tofaktorautentisering og sterke passord.</li>
+        <li>Hold programmer og aplikasjoner oppdatert.</li>
+      </ul>
+    
+
+    </div>
+  </div>
+</div>
+
+<!-- Femte Grid -->
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-twothird">
+        <h2>Hva du skal gjøre etter et phishing angrep!</h2>
+        <ol>
+            <li><b style="font-weight: bold;">Koble fra enheten:</b> Slå av internettet eller PC-enheten fra nettverket
+                 umiddelbart for å hindre at skadevaren sprer seg. 
+            </li>
+            <li><b style="font-weight: bold;">Meld fra inert:</b> Gi beskjed umiddelbart til hotellets IT-ansvarlig eller nærmeste leder.
+                 De kan sikre systemene, endre passord og forhindre videre skade. 
+                 Ikke slett e-posten eller meldingen før du har fått beskjed, dette kan bli brukt som bevis.</li>
+            <li><b style="font-weight: bold;">Varsle myndighetene:</b> Du bør også rapportere hendelsen til Politiet
+                 og Nasjonal Sikkerhetsmyndighet (NSM) via deres nettsider. </li>
+            <li><b style="font-weight: bold;">Finn ut hva som skjedde:</b> Noter hva du har trykket på og hvilken
+                informasjon du kan ha gitt fra deg.</li>
+            <li><b style="font-weight: bold;">Kontakte berørte partnere:</b> Hvis det er gjesteinformasjon, 
+                betaling eller e-postsystemer som har blitt berørt, varsle til ansvarlig leder.</li>
+            <li><b style="font-weight: bold;">Følg med på uvanlige hendelser: </b> Vær oppmerksom på uventede e-poster, systeminnlogginger
+                 eller endringer i bookinger. Si ifra om noe ser mistenkelig ut.</li>
+        </ol>
+         <div class="indikator_bilde">
+            <img src="Bilder/indikator.png" alt = "fisking" style="width: 350px; height: 250px;">
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- Nummer 6 Grid-->
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+  <div class="w3-content" style="margin-right: -60px;">
+    <div class="w3-third w3-center">
+      <img src="Bilder/huske_på.jpg" style="width: 350px; height: 200px; top: 50px; position: relative; top: 120px; right: 100px;">
+    </div>
+
+    <div class="w3-twothird">    
+        <h5 class="w3-padding-32"> *Vær kritisk til e-poster og meldinger </h5>
+        <h5 class="w3-padding-32"> *Ikke del personelig eller intern informasjon!</h5>
+        <h5 class="w3-padding-32"> *Se etter advarlseri språket og innholdet</h5>
+        <h5 class="w3-padding-32"> *Rapporter med en gang!</h5> 
+    </div>
+  </div>
+</div>
+
 
 <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
     <h1 class="w3-margin w3-xlarge">Hackere sjekker også inn! - vær forberedt</h1>
 </div>
+
+
+
+
 
 <script>
 // Used to toggle the menu on small screens when clicking on the menu button

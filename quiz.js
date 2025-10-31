@@ -1,6 +1,7 @@
 function buildQuiz(){
     const output = [];
-  
+    quizContainer.innerHTML = "";
+
     myQuestions.forEach(
       (currentQuestion, questionNumber) => {
   
@@ -11,7 +12,6 @@ function buildQuiz(){
           answers.push(
             `<label>
               <input type="radio" name="question${questionNumber}" value="${letter}">
-              ${letter} :
               ${currentQuestion.answers[letter]}
             </label>`
           );
@@ -23,12 +23,12 @@ function buildQuiz(){
         );
       }
     );
-  
+    resultsContainer.innerHTML = " "
+    submitButton.innerHTML = "Se resultat"
     quizContainer.innerHTML = output.join('');
   }
 
   function showResults(){
-
     const answerContainers = quizContainer.querySelectorAll('.answers');
   
     let numCorrect = 0;
@@ -49,11 +49,21 @@ function buildQuiz(){
       else{
         
         answerContainers[questionNumber].style.color = 'darkred';
-      }
-    });
+      } 
+      
+    });    
+    
   
-    resultsContainer.innerHTML = `${numCorrect} av ${myQuestions.length} riktige`;
+    submitButton.innerHTML = `Prøv på nytt`;
+    if (numCorrect >= 8) {
+      resultsContainer.innerHTML = `Du fikk ${numCorrect} av ${myQuestions.length} riktige, <br> og er nå NOVA utdannet!`; 
+    }
+    else {
+      resultsContainer.innerHTML = `Du fikk ${numCorrect} av ${myQuestions.length} riktige. <br> Prøv på nytt for å bli 
+      NOVA utdannet`; 
+    }
   }
+
 
 const quizContainer = document.getElementById('quiz');
 const resultsContainer = document.getElementById('results');
@@ -61,37 +71,106 @@ const submitButton = document.getElementById('submit');
 
 const myQuestions = [
     {
-      question: "Who invented JavaScript?",
+      question: "Hva er Phishing?",
       answers: {
-        a: "Douglas Crockford",
-        b: "Sheryl Sandberg",
-        c: "Brendan Eich"
+        a: "En type programvare som krypterer filer",
+        b: "En type svindel der angriperen prøver å få deg til å oppgi personlige opplysninger",
+        c: "En metode for å forberede nettsikkerhet",
+        d: "En lovfestet prosedyre for bankverifisering"
       },
-      correctAnswer: "c"
+      correctAnswer: "b"
     },
     {
-      question: "Which one of these is a JavaScript package manager?",
+      question: "Hvilket av disse er en god indikator på at en e-post kan være phishing?",
       answers: {
-        a: "Node.js",
-        b: "TypeScript",
-        c: "npm"
+        a: "E-posten bruker ditt fulle navn korrekt og spesifikt",
+        b: "E-posten kommer fra en intern bedriftskonto",
+        c: "E-posten inneholder ingen lenker eller vedlegg",
+        d: "E-posten adressen stemmer ikke overens med avsenderens visningsnavn"
       },
-      correctAnswer: "c"
+      correctAnswer: "d"
     },
     {
-        question: "Which tool can you use to ensure code quality?",
+        question: "Hvilket tiltak reduserer risikoen for å bli utsatt for phishing?",
         answers: {
-          a: "Angular",
-          b: "jQuery",
-          c: "RequireJS",
-          d: "ESLint"
+          a: "Bruk tofaktorautentisering og sterke passord",
+          b: "Oppgi PIN-kode når noen ber om det i en e-post ",
+          c: "Bruk samme passord på alle tjenester",
+          d: "Deaktiver oppdateringer for programmer og apper"
+        },
+        correctAnswer: "a"
+      },
+      {
+        question: "Hvor mange prosent er menneskelige feil den største årsaken for brudd på nettsikkerhet?",
+        answers: {
+          a: "60%",
+          b: "90%",
+          c: "95%",
+          d: "85%"
+        },
+        correctAnswer: "c"
+      },
+      {
+        question: "Hva er ikke et typisk eksempel på menneskelige feil som kan føre til sikkerhetsbrudd",
+        answers: {
+          a: "Klikke på en ukjent link",
+          b: "Koble til en tilfeldig USB",
+          c: "Sende viktig informasjon til feil person",
+          d: "Innbrudd i bedriften"
+        },
+        correctAnswer: "d"
+      },
+      {
+        question: "Hva er et eksempel på en ondsinnet handling?",
+        answers: {
+          a: "Selge informasjon til andre kunder",
+          b: "Glemme å låse pc'en",
+          c: "Ikke oppdatere systemer over lenger tid",
+          d: "Benytte svake passord"
+        },
+        correctAnswer: "a"
+      },
+      {
+        question: "Hvor bør du lagre passordene dine?",
+        answers: {
+          a: "En lapp på pulten din",
+          b: "Et dokument på pc'en",
+          c: "En passordbehandler",
+          d: "Man bør ikke lagre passordene sine noe sted"
+        },
+        correctAnswer: "c"
+      },
+      {
+        question: "Hvilket av passordene er et unikt passord?",
+        answers: {
+          a: "BeHappy123",
+          b: "H0rsE$hoeCaKe!",
+          c: "123456",
+          d: "lastaa!!"
+        },
+        correctAnswer: "b"
+      },
+      {
+        question: "Hva er et godt tips for sikker passordhåndtering",
+        answers: {
+          a: "Fortell det til en du stoler på",
+          b: "Ikke følg retningslinjene til nettsiden du bruker",
+          c: "Benytt samme passord på alle plattformer",
+          d: "Bruk tofaktorautentisering"
         },
         correctAnswer: "d"
       }
     ];
-
+    
+submitButton.addEventListener("click", () => {
+  if (submitButton.innerHTML === "Se resultat") {
+    showResults();
+  } 
+  else {
+        buildQuiz();
+      }
+  });
 buildQuiz();
 
-submitButton.addEventListener('click', showResults);
 
 
